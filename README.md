@@ -22,3 +22,55 @@ Received disconnect from 120.55.x.x: 2: Too many authentication failures for roo
 PreferredAuthentications password
 测试连接正常。
 ＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝＝
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+回头再push origin的时候又出现了这样的问题
+
+git push origin master
+
+Warning: Permanently added the RSA host key for IP address '192.30.252.128' to the list of known hosts.
+
+Permission denied (publickey).
+
+fatal: Could not read from remote repository.
+
+ 
+
+Please make sure you have the correct access rights
+
+and the repository exists.
+
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+   vi ~/.ssh/config
+
+      注释掉
+
+      ＃PreferredAuthentications password
+      提交正常
+
+      git push origin master
+
+      Counting objects: 3, done.
+
+      Delta compression using up to 4 threads.
+
+      Compressing objects: 100% (3/3), done.
+
+      Writing objects: 100% (3/3), 992 bytes | 0 bytes/s, done.
+
+      Total 3 (delta 0), reused 0 (delta 0)
+
+      To git@github.com:l496501043/first.git
+
+      d0cff78..8399039  master -> master
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+      又回去 ssh 120.55.x.x -l root 
+
+      连接正常，继续push origin到github也正常
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
+
+－－－－－－－－－－－－－－－－－－－－－－－－－－－－－分割线－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－－
